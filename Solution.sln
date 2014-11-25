@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIoCContainer", "IoCContain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIoCContainerTests", "IoCContainerTests\SIoCContainerTests.csproj", "{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructureMapPlayground", "StructureMapPlayground\StructureMapPlayground.csproj", "{686EE969-6A69-475D-B4D7-38C76C18E39C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkeetContainer", "SkeetContainer\SkeetContainer.csproj", "{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{686EE969-6A69-475D-B4D7-38C76C18E39C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{686EE969-6A69-475D-B4D7-38C76C18E39C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{686EE969-6A69-475D-B4D7-38C76C18E39C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{686EE969-6A69-475D-B4D7-38C76C18E39C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

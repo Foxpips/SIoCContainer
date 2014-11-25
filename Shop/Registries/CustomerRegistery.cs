@@ -17,6 +17,7 @@ namespace Shop.Registries
                 scan.From<ICustomer>().To<BillPayCustomer>();
                 scan.From<IAddress>().To<BillingAddress>();
                 scan.From<IProof>().To<Proof>();
+                scan.From<IProofType>().To<ProofType>();
             });
         }
     }

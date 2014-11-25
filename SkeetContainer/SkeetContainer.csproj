@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{500B5CAE-1435-480F-AE17-9D3E0722AB43}</ProjectGuid>
+    <ProjectGuid>{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Shop</RootNamespace>
-    <AssemblyName>Shop</AssemblyName>
+    <RootNamespace>SkeetContainer</RootNamespace>
+    <AssemblyName>SkeetContainer</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,10 +29,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,38 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootStrappers\BasketBootStrapper.cs" />
-    <Compile Include="BootStrappers\CustomerBootStrapper.cs" />
-    <Compile Include="Domain\Entities\Address\BillingAddress.cs" />
-    <Compile Include="Domain\Entities\Customer\BillPayCustomer.cs" />
-    <Compile Include="Domain\Entities\Cards\MasterCard.cs" />
-    <Compile Include="Domain\Entities\Proof\IProof.cs" />
-    <Compile Include="Domain\Entities\Proof\IProofType.cs" />
-    <Compile Include="Domain\Entities\Proof\Proof.cs" />
-    <Compile Include="Domain\Entities\Proof\ProofType.cs" />
-    <Compile Include="Domain\Entities\Shop\Basket.cs" />
-    <Compile Include="Domain\Entities\Shop\IOrder.cs" />
-    <Compile Include="Domain\Entities\Shop\Order.cs" />
-    <Compile Include="Domain\Entities\Shopper\Shopper.cs" />
-    <Compile Include="Domain\Entities\Cards\VisaDebit.cs" />
-    <Compile Include="Domain\Entities\Address\IAddress.cs" />
-    <Compile Include="Domain\Entities\Cards\ICreditCard.cs" />
-    <Compile Include="Domain\Entities\Customer\ICustomer.cs" />
-    <Compile Include="Domain\Entities\Shop\Order2.cs" />
+    <Compile Include="Injector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registries\BasketRegistry.cs" />
-    <Compile Include="Registries\CustomerRegistery.cs" />
+    <Compile Include="SkeetInjector.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\ViewModels\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IoCContainer\SIoCContainer.csproj">
       <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
       <Name>SIoCContainer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop\Shop.csproj">
+      <Project>{500b5cae-1435-480f-ae17-9d3e0722ab43}</Project>
+      <Name>Shop</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

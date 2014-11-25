@@ -7,7 +7,7 @@ using SIoCContainer.Attributes;
 
 namespace Shop.Domain.Entities.Shop
 {
-    public class Order
+    public class Order : IOrder
     {
         public Order(ICustomer customer, IAddress address)
         {

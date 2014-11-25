@@ -64,8 +64,20 @@ namespace SIoCContainer.Resolver
                     if (_dependencyMap.ContainsKey(fieldType))
                     {
                         var dependentModule = _dependencyMap[fieldType];
-                        var instance = Activator.CreateInstance(dependentModule);
-                        fieldInfo.SetValue(obj, instance);
+
+                        var constructorInfo = dependentModule.GetConstructors().First();
+                        ParameterInfo[] parameterInfos = constructorInfo.GetParameters();
+                        if (parameterInfos.Any())
+                        {
+                            constructorInfo.Invoke(parameterInfos
+                                .Select(p => CheckConstructors(p.ParameterType))
+                                .ToArray());
+                        }
+                        else
+                        {
+                            var instance = Activator.CreateInstance(dependentModule);
+                            fieldInfo.SetValue(obj, instance);
+                        }
                     }
                 }
                 catch (Exception)
