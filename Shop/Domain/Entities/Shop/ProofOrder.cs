@@ -3,12 +3,12 @@ using Shop.Domain.Entities.Proof;
 
 namespace Shop.Domain.Entities.Shop
 {
-    public class Order2 : IOrder
+    public class ProofOrder : IOrder
     {
         public IProof Proof { get; set; }
         public ICreditCard Card { get; set; }
 
-        public Order2(IProof proof,ICreditCard card)
+        public ProofOrder(IProof proof,ICreditCard card)
         {
             Proof = proof;
             Card = card;

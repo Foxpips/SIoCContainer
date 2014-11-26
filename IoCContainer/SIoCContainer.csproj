@@ -53,15 +53,16 @@
     <Compile Include="BootStrappers\Configurator.cs" />
     <Compile Include="BootStrappers\IBootStrapper.cs" />
     <Compile Include="Attributes\InjectableAttribute.cs" />
+    <Compile Include="Injectors\SInjector.cs" />
+    <Compile Include="Injectors\SkeetInjector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registers\IRegistry.cs" />
     <Compile Include="Infrastructure\IRunAtStartup.cs" />
     <Compile Include="Registers\BaseRegistry.cs" />
     <Compile Include="Resolver\DependencyResolver.cs" />
-    <Compile Include="Resolver\ObjectCrawler.cs" />
-    <Compile Include="Resolver\Resolver.cs" />
-    <Compile Include="Resolver\Services\ClassCrawlerService.cs" />
-    <Compile Include="Resolver\Services\TypeCheckerService.cs" />
+    <Compile Include="Services\ObjectCrawlerService.cs" />
+    <Compile Include="Services\ClassCrawlerService.cs" />
+    <Compile Include="Services\TypeCheckerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

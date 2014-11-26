@@ -1,22 +1,21 @@
-﻿using Rhino.ServiceBus.StructureMap;
-
-using StructureMap;
+﻿using StructureMap;
 
 using StructureMapPlayground.Registries;
 
 namespace StructureMapPlayground.BootStrappers
 {
-    public class OrderBootStrapper : StructureMapBootStrapper
+    public class OrderBootStrapper : IBootStrapper
     {
-        protected override void ConfigureContainer()
+        public Container CreateContainer()
         {
-            base.ConfigureContainer();
-
-             new Container().Configure(cfg =>
+            var container = new Container();
+            container.Configure(cfg =>
             {
                 cfg.AddRegistry(new BasketRegistry());
                 cfg.AddRegistry(new OrderRegistry());
             });
+
+            return container;
         }
     }
 }

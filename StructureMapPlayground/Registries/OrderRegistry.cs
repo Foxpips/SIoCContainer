@@ -12,7 +12,7 @@ namespace StructureMapPlayground.Registries
         {
             Scan(scan =>
             {
-                scan.AssemblyContainingType<Order2>();
+                scan.AssemblyContainingType<ProofOrder>();
                 scan.AssemblyContainingType<VisaDebit>();
                 scan.AssemblyContainingType<Proof>();
                 scan.WithDefaultConventions();

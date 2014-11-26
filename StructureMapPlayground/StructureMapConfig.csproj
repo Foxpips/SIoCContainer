@@ -7,8 +7,8 @@
     <ProjectGuid>{686EE969-6A69-475D-B4D7-38C76C18E39C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StructureMapPlayground</RootNamespace>
-    <AssemblyName>StructureMapPlayground</AssemblyName>
+    <RootNamespace>StructureMapConfig</RootNamespace>
+    <AssemblyName>StructureMapConfig</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -59,11 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BootStrappers\BasketBootStrapper.cs" />
+    <Compile Include="BootStrappers\IBootStrapper.cs" />
     <Compile Include="BootStrappers\OrderBootStrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registries\BasketRegistry.cs" />
     <Compile Include="Registries\OrderRegistry.cs" />
-    <Compile Include="StructureMapTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -4,9 +4,9 @@ using StructureMapPlayground.Registries;
 
 namespace StructureMapPlayground.BootStrappers
 {
-    public class BasketResolver
+    public class BasketBootStrapper : IBootStrapper
     {
-        public Container Resolve()
+        public Container CreateContainer()
         {
             return new Container(new BasketRegistry());
         }

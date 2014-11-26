@@ -7,6 +7,7 @@ using SIoCContainer.Attributes;
 
 namespace Shop.Domain.Entities.Shop
 {
+    [Injectable]
     public class Order : IOrder
     {
         public Order(ICustomer customer, IAddress address)

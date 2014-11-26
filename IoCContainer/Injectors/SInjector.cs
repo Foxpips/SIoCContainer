@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SkeetContainer
+namespace SIoCContainer.Injectors
 {
-    internal class Injector
+    //Injector inspired by John Sonmez
+    public class SInjector
     {
         private readonly Dictionary<Type, Type> _providers = new Dictionary<Type, Type>();
 
@@ -15,22 +16,22 @@ namespace SkeetContainer
 
         internal TKey Resolve<TKey>()
         {
-            return (TKey) ResolveByType(typeof (TKey));
+            return (TKey) Resolve(typeof (TKey));
         }
 
-        private object ResolveByType(Type type)
+        private object Resolve(Type type)
         {
-            return GetTypeResolution(_providers.ContainsKey(type) ? _providers[type] : type);
+            return ResolveDependencies(_providers.ContainsKey(type) ? _providers[type] : type);
         }
 
-        private object GetTypeResolution(Type resolvedType)
+        private object ResolveDependencies(Type resolvedType)
         {
             var constructor = resolvedType.GetConstructors().First();
             var paraminfos = constructor.GetParameters();
 
             return !paraminfos.Any()
                 ? Activator.CreateInstance(resolvedType)
-                : constructor.Invoke(paraminfos.Select(parameterInfo => ResolveByType(parameterInfo.ParameterType)).ToArray());
+                : constructor.Invoke(paraminfos.Select(parameterInfo => Resolve(parameterInfo.ParameterType)).ToArray());
         }
     }
 }

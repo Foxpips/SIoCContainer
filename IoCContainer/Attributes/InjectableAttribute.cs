@@ -10,5 +10,10 @@ namespace SIoCContainer.Attributes
         {
             Value = value;
         }
+
+        public InjectableAttribute()
+        {
+            
+        }
     }
 }

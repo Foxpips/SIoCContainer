@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 
 using SIoCContainer.Attributes;
-using SIoCContainer.Resolver.Services;
+using SIoCContainer.Services;
 
 namespace SIoCContainer.Resolver
 {
@@ -48,8 +48,8 @@ namespace SIoCContainer.Resolver
 
             object obj = CheckConstructors(type);
 
-            SetFields(obj, ObjectCrawler.GetFieldInfos(type));
-            SetProperties(obj, ObjectCrawler.GetPropertyInfos(type));
+            SetFields(obj, ObjectCrawlerService.GetFieldInfos(type));
+            SetProperties(obj, ObjectCrawlerService.GetPropertyInfos(type));
 
             return (TType) obj;
         }
@@ -151,7 +151,7 @@ namespace SIoCContainer.Resolver
             if (!parameterInfos.Any())
             {
                 var checkConstructors = Activator.CreateInstance(resolvedType);
-                SetFields(checkConstructors, ObjectCrawler.GetFieldInfos(checkConstructors.GetType()));
+                SetFields(checkConstructors, ObjectCrawlerService.GetFieldInfos(checkConstructors.GetType()));
                 return checkConstructors;
             }
 

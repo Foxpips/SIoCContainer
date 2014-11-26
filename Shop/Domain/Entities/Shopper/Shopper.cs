@@ -8,8 +8,8 @@ namespace Shop.Domain.Entities.Shopper
 {
     public class Shopper
     {
-        private ICreditCard _card;
-        private ICustomer _customerType;
+        public ICreditCard _card;
+        public ICustomer _customerType;
 
         public Shopper()
         {

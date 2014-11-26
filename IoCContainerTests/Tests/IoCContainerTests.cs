@@ -9,10 +9,11 @@ using Shop.Domain.Entities.Proof;
 using Shop.Domain.Entities.Shop;
 
 using SIoCContainer.Resolver;
+using SIoCContainer.Services;
 
-namespace SIoCContainerTests.Tests.ResolverTests
+namespace SIoCContainerTests.Tests
 {
-    public class DependencyResolverTests
+    public class IoCContainerTests
     {
         [Test]
         public void TestDependencyResolver_Customer_InjectsRequiredObjects()
@@ -21,7 +22,7 @@ namespace SIoCContainerTests.Tests.ResolverTests
             var basket = DependencyResolver.Resolve<Basket>();
 
             Assert.That(basket.Card.GetType(), Is.EqualTo(typeof (VisaDebit)));
-            ObjectCrawler.IterateTypeMemberValues(basket);
+            ObjectCrawlerService.IterateTypeMemberValues(basket);
         }
 
         [Test]
@@ -45,7 +46,7 @@ namespace SIoCContainerTests.Tests.ResolverTests
             Assert.That(order.CustomerProof.GetType(), Is.EqualTo(typeof (Proof)));
             Assert.That(order.CreditCard.GetType(), Is.EqualTo(typeof (VisaDebit)));
 
-            ObjectCrawler.IterateTypeMemberValues(order);
+            ObjectCrawlerService.IterateTypeMemberValues(order);
         }
     }
 }

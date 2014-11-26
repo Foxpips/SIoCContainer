@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace SIoCContainer.Resolver.Services
+namespace SIoCContainer.Services
 {
-    public static class ClassCrawlerService
+    public class ClassCrawlerService
     {
-        public class ReflectedFieldObject
+        public class ReflectedObject
         {
             public string Name { get; set; }
             public object TypeAtRunTime { get; set; }
             public Type UnderlyingType { get; set; }
         }
 
-        public static IEnumerable<ReflectedFieldObject> GetAllMemberInfos(object obj, BindingFlags bindingFlags)
+        public static IEnumerable<ReflectedObject> GetAllMemberInfos(object obj, BindingFlags bindingFlags)
         {
             var type = obj.GetType();
 
-            var reflectedFieldObjects = new List<ReflectedFieldObject>();
+            var reflectedFieldObjects = new List<ReflectedObject>();
 
-            reflectedFieldObjects.AddRange(type.GetFields(bindingFlags).Select(fieldInfo => new ReflectedFieldObject
+            reflectedFieldObjects.AddRange(type.GetFields(bindingFlags).Select(fieldInfo => new ReflectedObject
             {
                 Name = fieldInfo.Name,
                 UnderlyingType = fieldInfo.FieldType,
                 TypeAtRunTime = fieldInfo.GetValue(obj)
             }));
 
-            reflectedFieldObjects.AddRange(type.GetProperties(bindingFlags).Select(fieldInfo => new ReflectedFieldObject
+            reflectedFieldObjects.AddRange(type.GetProperties(bindingFlags).Select(fieldInfo => new ReflectedObject
             {
                 Name = fieldInfo.Name,
                 UnderlyingType = fieldInfo.PropertyType,
@@ -37,7 +37,7 @@ namespace SIoCContainer.Resolver.Services
             return reflectedFieldObjects;
         }
 
-        public static bool DoesClassContainType<TClass>(IEnumerable<ReflectedFieldObject> objects)
+        public static bool DoesClassContainType<TClass>(IEnumerable<ReflectedObject> objects)
         {
             var containsType = false;
 
@@ -54,19 +54,12 @@ namespace SIoCContainer.Resolver.Services
             return containsType;
         }
 
-        private static void DisplayTypeDetails(ReflectedFieldObject reflectedObject, object fieldTypeAtRunTime)
+        private static void DisplayTypeDetails(ReflectedObject reflectedObject, object fieldTypeAtRunTime)
         {
             Console.WriteLine(reflectedObject.Name);
             Console.WriteLine(reflectedObject.UnderlyingType);
             Console.WriteLine(fieldTypeAtRunTime);
             Console.WriteLine();
-        }
-
-        public static T MapOut<T>(T mappable)
-        {
-            var mapOut = mappable;
-
-            return mapOut;
         }
     }
 }

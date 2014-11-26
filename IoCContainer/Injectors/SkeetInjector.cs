@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SkeetContainer
+namespace SIoCContainer.Injectors
 {
+    //Injector inspired by Jon Skeet
     public class SkeetInjector
     {
         private readonly Dictionary<Type, Func<object>> _dependencyMap = new Dictionary<Type, Func<object>>();
@@ -18,6 +19,12 @@ namespace SkeetContainer
             return (T) Resolve(typeof (T));
         }
 
+        private object Resolve(Type type)
+        {
+            Func<object> provider;
+            return _dependencyMap.TryGetValue(type, out provider) ? provider() : ResolveDependencies(type);
+        }
+
         private object ResolveDependencies(Type type)
         {
             var constructorInfo = type.GetConstructors().First();
@@ -25,12 +32,6 @@ namespace SkeetContainer
                 constructorInfo.Invoke(constructorInfo.GetParameters()
                     .Select(p => Resolve(p.ParameterType))
                     .ToArray());
-        }
-
-        private object Resolve(Type type)
-        {
-            Func<object> provider;
-            return _dependencyMap.TryGetValue(type, out provider) ? provider() : ResolveDependencies(type);
         }
     }
 }

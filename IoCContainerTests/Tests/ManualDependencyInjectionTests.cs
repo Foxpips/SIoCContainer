@@ -9,16 +9,17 @@ using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Customer;
 using Shop.Domain.Entities.Shopper;
 
-using SIoCContainer.Resolver.Services;
+using SIoCContainer.Services;
 
-namespace SIoCContainerTests.Tests.InjectionTests
+namespace SIoCContainerTests.Tests
 {
-    public class DependencyInjectionTests
+    public class ManualDependencyInjectionTests
     {
         [Test]
         public void DependcyInjection_ConstructorInjection_InjectICustomerType()
         {
             var shopper = new Shopper(new BillPayCustomer());
+            Assert.That(shopper._customerType.GetType(), Is.EqualTo(typeof(BillPayCustomer)));
         }
 
         [Test]
@@ -33,6 +34,7 @@ namespace SIoCContainerTests.Tests.InjectionTests
         {
             var shopper = new Shopper();
             shopper.Inject(new VisaDebit());
+            Assert.That(shopper._card.GetType(), Is.EqualTo(typeof(VisaDebit)));
         }
 
         [Test]
@@ -47,7 +49,7 @@ namespace SIoCContainerTests.Tests.InjectionTests
             var reflectedObjects = ClassCrawlerService.GetAllMemberInfos(shopper,
                 BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.Public);
 
-            var objects = reflectedObjects as IList<ClassCrawlerService.ReflectedFieldObject> ??
+            var objects = reflectedObjects as IList<ClassCrawlerService.ReflectedObject> ??
                           reflectedObjects.ToList();
 
             Assert.IsTrue(ClassCrawlerService.DoesClassContainType<BillPayCustomer>(objects));

@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace SIoCContainer.Resolver
+namespace SIoCContainer.Services
 {
-    public class ObjectCrawler
+    public class ObjectCrawlerService
     {
         public static IEnumerable<PropertyInfo> GetPropertyInfos(Type type)
         {

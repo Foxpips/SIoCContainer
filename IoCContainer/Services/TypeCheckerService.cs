@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIoCContainer.Resolver.Services
+namespace SIoCContainer.Services
 {
     public class TypeCheckerService
     {
