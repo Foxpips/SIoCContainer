@@ -53,6 +53,9 @@
     <Compile Include="BootStrappers\Configurator.cs" />
     <Compile Include="BootStrappers\IBootStrapper.cs" />
     <Compile Include="Attributes\InjectableAttribute.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Injectors\SonmezInjector.cs" />
+    <Compile Include="Registers\IoCCoreRegister.cs" />
     <Compile Include="Injectors\SInjector.cs" />
     <Compile Include="Injectors\SkeetInjector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,8 +1,9 @@
 ﻿using System.Reflection;
 
+using IoCConfiguration.SInjector.BootStrappers;
+
 using NUnit.Framework;
 
-using Shop.BootStrappers;
 using Shop.Domain.Entities.Address;
 using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Proof;
@@ -16,6 +17,7 @@ namespace SIoCContainerTests.Tests
     public class IoCContainerTests
     {
         [Test]
+        [Ignore("Dependency Resolver is being phased out")]
         public void TestDependencyResolver_Customer_InjectsRequiredObjects()
         {
             new BasketBootStrapper().Configure();
@@ -26,6 +28,7 @@ namespace SIoCContainerTests.Tests
         }
 
         [Test]
+        [Ignore("Dependency Resolver is being phased out")]
         public void MethodUnderTest_TestedBehavior_ExpectedResult()
         {
             new CustomerBootStrapper().Configure();

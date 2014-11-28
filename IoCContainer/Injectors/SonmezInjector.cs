@@ -2,19 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using SIoCContainer.Extensions;
-using SIoCContainer.Registers;
-
 namespace SIoCContainer.Injectors
 {
-    public class SInjector
+    //Injector inspired by John Sonmez
+    public class SonmezInjector
     {
         private readonly Dictionary<Type, Type> _providers = new Dictionary<Type, Type>();
-
-        public SInjector()
-        {
-            _providers.AddRange(IoCCoreRegister.CoreTypeRegistry);
-        }
 
         public void Bind<TFrom, TTo>()
         {
@@ -33,16 +26,12 @@ namespace SIoCContainer.Injectors
 
         private object ResolveDependencies(Type resolvedType)
         {
-            var constructorInfos = resolvedType.GetConstructors();
-            if (constructorInfos.Any())
-            {
-                var constructor = constructorInfos.First();
-                return
-                    constructor.Invoke(constructor.GetParameters()
-                        .Select(p => Resolve(p.ParameterType))
-                        .ToArray());
-            }
-            return null;
+            var constructor = resolvedType.GetConstructors().First();
+            var paraminfos = constructor.GetParameters();
+
+            return !paraminfos.Any()
+                ? Activator.CreateInstance(resolvedType)
+                : constructor.Invoke(paraminfos.Select(parameterInfo => Resolve(parameterInfo.ParameterType)).ToArray());
         }
     }
 }

@@ -74,9 +74,9 @@
       <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
       <Name>SIoCContainer</Name>
     </ProjectReference>
-    <ProjectReference Include="..\StructureMapPlayground\StructureMapConfig.csproj">
+    <ProjectReference Include="..\StructureMapPlayground\IoCConfiguration.csproj">
       <Project>{686ee969-6a69-475d-b4d7-38c76c18e39c}</Project>
-      <Name>StructureMapConfig</Name>
+      <Name>IoCConfiguration</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

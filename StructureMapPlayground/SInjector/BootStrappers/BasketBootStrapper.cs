@@ -1,11 +1,11 @@
 ﻿using System;
 
-using Shop.Registries;
+using IoCConfiguration.SInjector.Registries;
 
 using SIoCContainer.BootStrappers;
 using SIoCContainer.Infrastructure;
 
-namespace Shop.BootStrappers
+namespace IoCConfiguration.SInjector.BootStrappers
 {
     public class BasketBootStrapper : BootStrapper, IRunAtStartup
     {
@@ -14,9 +14,18 @@ namespace Shop.BootStrappers
             ConfigureContainer(cfg => cfg.AddRegistry(new BasketRegistry()));
         }
 
-        public void ExecuteOnStartup(object sender, AssemblyLoadEventArgs args)
+        public void ExecuteOnStartup()
         {
             Configure();
+        }
+
+        public void ExecuteOnStartup(object sender, AssemblyLoadEventArgs args)
+        {
+            ExecuteOnStartup();
+        }
+
+        public void ExecuteOnShutdown()
+        {
         }
 
         public void ExecuteOnShutdown(object sender, AssemblyLoadEventArgs args)

@@ -1,5 +1,4 @@
 ﻿using SIoCContainer.Registers;
-using SIoCContainer.Resolver;
 
 namespace SIoCContainer.BootStrappers
 {
@@ -9,7 +8,7 @@ namespace SIoCContainer.BootStrappers
         {
             foreach (var registeredType in dependencyRegistry.GetRegisteredTypes())
             {
-                DependencyResolver.Register(registeredType.Key, registeredType.Value);
+                IoCCoreRegister.Register(registeredType.Key, registeredType.Value);
             }
         }
     }

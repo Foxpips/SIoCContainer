@@ -45,8 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootStrappers\BasketBootStrapper.cs" />
-    <Compile Include="BootStrappers\CustomerBootStrapper.cs" />
     <Compile Include="Domain\Entities\Address\BillingAddress.cs" />
     <Compile Include="Domain\Entities\Customer\BillPayCustomer.cs" />
     <Compile Include="Domain\Entities\Cards\MasterCard.cs" />
@@ -64,8 +62,6 @@
     <Compile Include="Domain\Entities\Customer\ICustomer.cs" />
     <Compile Include="Domain\Entities\Shop\ProofOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registries\BasketRegistry.cs" />
-    <Compile Include="Registries\CustomerRegistery.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

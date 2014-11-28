@@ -2,7 +2,7 @@
 
 using SIoCContainer.Registers;
 
-namespace Shop.Registries
+namespace IoCConfiguration.SInjector.Registries
 {
     public class BasketRegistry : BaseRegistry
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{686EE969-6A69-475D-B4D7-38C76C18E39C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>StructureMapConfig</RootNamespace>
-    <AssemblyName>StructureMapConfig</AssemblyName>
+    <RootNamespace>IoCConfiguration</RootNamespace>
+    <AssemblyName>IoCConfiguration</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -58,17 +58,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootStrappers\BasketBootStrapper.cs" />
-    <Compile Include="BootStrappers\IBootStrapper.cs" />
-    <Compile Include="BootStrappers\OrderBootStrapper.cs" />
+    <Compile Include="SInjector\BootStrappers\BasketBootStrapper.cs" />
+    <Compile Include="SInjector\BootStrappers\CustomerBootStrapper.cs" />
+    <Compile Include="SInjector\Registries\BasketRegistry.cs" />
+    <Compile Include="SInjector\Registries\CustomerRegistery.cs" />
+    <Compile Include="StructureMap\BootStrappers\SmBasketIsmBootStrapper.cs" />
+    <Compile Include="StructureMap\ISMBootStrapper.cs" />
+    <Compile Include="StructureMap\BootStrappers\OrderIsmBootStrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registries\BasketRegistry.cs" />
-    <Compile Include="Registries\OrderRegistry.cs" />
+    <Compile Include="StructureMap\Registries\BasketRegistry.cs" />
+    <Compile Include="StructureMap\Registries\OrderRegistry.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IoCContainer\SIoCContainer.csproj">
+      <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
+      <Name>SIoCContainer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shop\Shop.csproj">
       <Project>{500b5cae-1435-480f-ae17-9d3e0722ab43}</Project>
       <Name>Shop</Name>

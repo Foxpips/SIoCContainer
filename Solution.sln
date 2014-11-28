@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIoCContainer", "IoCContain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIoCContainerTests", "IoCContainerTests\SIoCContainerTests.csproj", "{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StructureMapConfig", "StructureMapPlayground\StructureMapConfig.csproj", "{686EE969-6A69-475D-B4D7-38C76C18E39C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoCConfiguration", "StructureMapPlayground\IoCConfiguration.csproj", "{686EE969-6A69-475D-B4D7-38C76C18E39C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,10 +1,10 @@
-﻿using StructureMap;
+﻿using IoCConfiguration.StructureMap.Registries;
 
-using StructureMapPlayground.Registries;
+using StructureMap;
 
-namespace StructureMapPlayground.BootStrappers
+namespace IoCConfiguration.StructureMap.BootStrappers
 {
-    public class OrderBootStrapper : IBootStrapper
+    public class OrderIsmBootStrapper : ISmBootStrapper
     {
         public Container CreateContainer()
         {

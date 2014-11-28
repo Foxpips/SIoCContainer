@@ -2,7 +2,7 @@
 
 using StructureMap.Configuration.DSL;
 
-namespace StructureMapPlayground.Registries
+namespace IoCConfiguration.StructureMap.Registries
 {
     public class BasketRegistry : Registry
     {
