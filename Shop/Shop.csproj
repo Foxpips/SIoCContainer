@@ -70,9 +70,9 @@
     <Folder Include="Domain\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IoCContainer\SIoCContainer.csproj">
+    <ProjectReference Include="..\IoCContainer\IoCContainer.csproj">
       <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
-      <Name>SIoCContainer</Name>
+      <Name>IoCContainer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

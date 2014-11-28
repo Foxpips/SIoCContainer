@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{163BBD19-EBA4-4646-B8DD-80ADA6938912}</ProjectGuid>
+    <ProjectGuid>{33F1167D-6D00-4EC3-820B-EDA8D4D2435E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SIoCContainer</RootNamespace>
-    <AssemblyName>SIoCContainer</AssemblyName>
+    <RootNamespace>IoCContainerTests</RootNamespace>
+    <AssemblyName>IoCContainerTests</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -40,6 +40,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.3.1.4.143\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,32 +55,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootStrappers\BootStrapper.cs" />
-    <Compile Include="BootStrappers\Configurator.cs" />
-    <Compile Include="BootStrappers\IBootStrapper.cs" />
-    <Compile Include="Attributes\InjectableAttribute.cs" />
-    <Compile Include="Extensions\DictionaryExtensions.cs" />
-    <Compile Include="Injectors\SonmezInjector.cs" />
-    <Compile Include="Registers\IoCCoreRegister.cs" />
-    <Compile Include="Injectors\SInjector.cs" />
-    <Compile Include="Injectors\SkeetInjector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registers\IRegistry.cs" />
-    <Compile Include="Infrastructure\IRunAtStartup.cs" />
-    <Compile Include="Registers\BaseRegistry.cs" />
-    <Compile Include="Resolver\DependencyResolver.cs" />
-    <Compile Include="Services\ObjectCrawlerService.cs" />
-    <Compile Include="Services\ClassCrawlerService.cs" />
-    <Compile Include="Services\TypeCheckerService.cs" />
+    <Compile Include="Tests\ManualDependencyInjectionTests.cs" />
+    <Compile Include="Tests\IoCContainerTests.cs" />
+    <Compile Include="Tests\StructureMapTests.cs" />
+    <Compile Include="Tests\InjectorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+    <ProjectReference Include="..\IoCConfiguration\IoCConfiguration.csproj">
+      <Project>{686ee969-6a69-475d-b4d7-38c76c18e39c}</Project>
+      <Name>IoCConfiguration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shop\Shop.csproj">
+      <Project>{500b5cae-1435-480f-ae17-9d3e0722ab43}</Project>
+      <Name>Shop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IoCContainer\IoCContainer.csproj">
+      <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
+      <Name>IoCContainer</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

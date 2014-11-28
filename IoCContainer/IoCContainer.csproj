@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8F244FCE-2D9B-415F-A97D-84ABAAD81F2B}</ProjectGuid>
+    <ProjectGuid>{163BBD19-EBA4-4646-B8DD-80ADA6938912}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SkeetContainer</RootNamespace>
-    <AssemblyName>SkeetContainer</AssemblyName>
+    <RootNamespace>IoCContainer</RootNamespace>
+    <AssemblyName>IoCContainer</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,12 +24,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
@@ -43,23 +49,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Injector.cs" />
+    <Compile Include="BootStrappers\BootStrapper.cs" />
+    <Compile Include="BootStrappers\Configurator.cs" />
+    <Compile Include="BootStrappers\IBootStrapper.cs" />
+    <Compile Include="Attributes\InjectableAttribute.cs" />
+    <Compile Include="Extensions\DictionaryExtensions.cs" />
+    <Compile Include="Injectors\SonmezInjector.cs" />
+    <Compile Include="Registers\IoCCoreRegister.cs" />
+    <Compile Include="Injectors\SInjector.cs" />
+    <Compile Include="Injectors\SkeetInjector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SkeetInjector.cs" />
-    <Compile Include="Test.cs" />
+    <Compile Include="Registers\IRegistry.cs" />
+    <Compile Include="Infrastructure\IRunAtStartup.cs" />
+    <Compile Include="Registers\BaseRegistry.cs" />
+    <Compile Include="Resolver\DependencyResolver.cs" />
+    <Compile Include="Services\ObjectCrawlerService.cs" />
+    <Compile Include="Services\ClassCrawlerService.cs" />
+    <Compile Include="Services\TypeCheckerService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\IoCContainer\SIoCContainer.csproj">
-      <Project>{163bbd19-eba4-4646-b8dd-80ada6938912}</Project>
-      <Name>SIoCContainer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Shop\Shop.csproj">
-      <Project>{500b5cae-1435-480f-ae17-9d3e0722ab43}</Project>
-      <Name>Shop</Name>
-    </ProjectReference>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
