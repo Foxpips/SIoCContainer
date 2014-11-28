@@ -1,8 +1,8 @@
-﻿using Shop.Domain.Entities.Address;
+﻿using IoCContainer.Registers;
+
+using Shop.Domain.Entities.Address;
 using Shop.Domain.Entities.Customer;
 using Shop.Domain.Entities.Proof;
-
-using SIoCContainer.Registers;
 
 namespace IoCConfiguration.SInjector.Registries
 {

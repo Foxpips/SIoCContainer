@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SIoCContainer.Registers
+namespace IoCContainer.Registers
 {
     public class IoCCoreRegister
     {

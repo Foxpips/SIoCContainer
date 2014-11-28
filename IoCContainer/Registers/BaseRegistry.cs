@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIoCContainer.Registers
+namespace IoCContainer.Registers
 {
     public class BaseRegistry : IRegistry
     {

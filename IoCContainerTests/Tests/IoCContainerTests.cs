@@ -2,6 +2,9 @@
 
 using IoCConfiguration.SInjector.BootStrappers;
 
+using IoCContainer.Resolver;
+using IoCContainer.Services;
+
 using NUnit.Framework;
 
 using Shop.Domain.Entities.Address;
@@ -9,10 +12,7 @@ using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Proof;
 using Shop.Domain.Entities.Shop;
 
-using SIoCContainer.Resolver;
-using SIoCContainer.Services;
-
-namespace SIoCContainerTests.Tests
+namespace IoCContainerTests.Tests
 {
     public class IoCContainerTests
     {

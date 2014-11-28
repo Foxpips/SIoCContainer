@@ -2,8 +2,8 @@
 
 using IoCConfiguration.SInjector.Registries;
 
-using SIoCContainer.BootStrappers;
-using SIoCContainer.Infrastructure;
+using IoCContainer.BootStrappers;
+using IoCContainer.Infrastructure;
 
 namespace IoCConfiguration.SInjector.BootStrappers
 {

@@ -6,7 +6,7 @@ using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Proof;
 using Shop.Domain.Entities.Shop;
 
-namespace SIoCContainerTests.Tests
+namespace IoCContainerTests.Tests
 {
     public class StructureMapTests
     {

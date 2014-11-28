@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+using IoCContainer.Services;
+
 using NUnit.Framework;
 
 using Shop.Domain.Entities.Address;
@@ -9,9 +11,7 @@ using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Customer;
 using Shop.Domain.Entities.Shopper;
 
-using SIoCContainer.Services;
-
-namespace SIoCContainerTests.Tests
+namespace IoCContainerTests.Tests
 {
     public class ManualDependencyInjectionTests
     {

@@ -1,4 +1,4 @@
-﻿using SIoCContainer.Attributes;
+﻿using IoCContainer.Attributes;
 
 namespace Shop.Domain.Entities.Proof
 {

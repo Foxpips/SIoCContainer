@@ -1,6 +1,6 @@
 using System;
 
-namespace SIoCContainer.Attributes
+namespace IoCContainer.Attributes
 {
     public class InjectableAttribute : Attribute
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIoCContainer.Injectors
+namespace IoCContainer.Injectors
 {
     //Injector inspired by John Sonmez
     public class SonmezInjector

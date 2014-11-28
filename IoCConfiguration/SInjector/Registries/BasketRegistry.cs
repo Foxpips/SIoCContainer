@@ -1,6 +1,6 @@
-﻿using Shop.Domain.Entities.Cards;
+﻿using IoCContainer.Registers;
 
-using SIoCContainer.Registers;
+using Shop.Domain.Entities.Cards;
 
 namespace IoCConfiguration.SInjector.Registries
 {

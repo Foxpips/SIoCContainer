@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-using SIoCContainer.Attributes;
-using SIoCContainer.Services;
+using IoCContainer.Attributes;
+using IoCContainer.Services;
 
-namespace SIoCContainer.Resolver
+namespace IoCContainer.Resolver
 {
     public static class DependencyResolver
     {

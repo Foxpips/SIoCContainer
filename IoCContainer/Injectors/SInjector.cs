@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using SIoCContainer.Extensions;
-using SIoCContainer.Registers;
+using IoCContainer.Extensions;
+using IoCContainer.Registers;
 
-namespace SIoCContainer.Injectors
+namespace IoCContainer.Injectors
 {
     public class SInjector
     {

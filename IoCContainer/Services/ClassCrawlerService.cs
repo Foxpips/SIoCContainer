@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace SIoCContainer.Services
+namespace IoCContainer.Services
 {
     public class ClassCrawlerService
     {

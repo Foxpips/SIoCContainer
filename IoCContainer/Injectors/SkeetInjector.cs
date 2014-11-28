@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SIoCContainer.Injectors
+namespace IoCContainer.Injectors
 {
     //Injector inspired by Jon Skeet
     public class SkeetInjector

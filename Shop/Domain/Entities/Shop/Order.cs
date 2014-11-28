@@ -1,9 +1,9 @@
-﻿using Shop.Domain.Entities.Address;
+﻿using IoCContainer.Attributes;
+
+using Shop.Domain.Entities.Address;
 using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Customer;
 using Shop.Domain.Entities.Proof;
-
-using SIoCContainer.Attributes;
 
 namespace Shop.Domain.Entities.Shop
 {

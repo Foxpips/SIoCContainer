@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIoCContainer.Infrastructure
+namespace IoCContainer.Infrastructure
 {
     public interface IRunAtStartup
     {

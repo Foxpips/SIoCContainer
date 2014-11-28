@@ -3,16 +3,16 @@ using System.Linq;
 
 using IoCConfiguration.SInjector.BootStrappers;
 
+using IoCContainer.Infrastructure;
+using IoCContainer.Injectors;
+
 using NUnit.Framework;
 
 using Shop.Domain.Entities.Cards;
 using Shop.Domain.Entities.Proof;
 using Shop.Domain.Entities.Shop;
 
-using SIoCContainer.Infrastructure;
-using SIoCContainer.Injectors;
-
-namespace SIoCContainerTests.Tests
+namespace IoCContainerTests.Tests
 {
     public class InjectorTests
     {

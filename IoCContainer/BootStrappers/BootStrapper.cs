@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SIoCContainer.BootStrappers
+namespace IoCContainer.BootStrappers
 {
     public class BootStrapper : IBootStrapper
     {

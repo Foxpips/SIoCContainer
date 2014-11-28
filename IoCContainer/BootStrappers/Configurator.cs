@@ -1,6 +1,6 @@
-﻿using SIoCContainer.Registers;
+﻿using IoCContainer.Registers;
 
-namespace SIoCContainer.BootStrappers
+namespace IoCContainer.BootStrappers
 {
     public class Configurator
     {
